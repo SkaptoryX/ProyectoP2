@@ -3,8 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import campus from '../assets/images/campus.jpg';
 
 const carreras = [
-  { nombre: 'Arquitectura', id: 'arquitectura' }
-  // ...agrega aquí las otras carreras solo con nombre e id...
+  { nombre: 'Arquitectura', id: 'arquitectura' },
+  { nombre: 'Ingeniería Civil Informática', id: 'informatica' },
+  { nombre: 'Ingeniería Civil Química', id: 'quimica' },
+  { nombre: 'Ingeniería Civil Física', id: 'fisica' },
+  { nombre: 'Ingeniería Civil de Minas', id: 'minas' },
+  { nombre: 'Ingeniería Civil Industrial', id: 'industrial' },
+  { nombre: 'Ingeniería Civil Mecánica', id: 'mecanica' },
+  { nombre: 'Ingeniería Civil Eléctrica', id: 'electrica' }
 ];
 
 function Carreras() {
@@ -53,8 +59,19 @@ function Carreras() {
         />
         <Grid container spacing={2}>
           {carreras.map((carrera, idx) => (
-            <Grid item xs={12} sm={6} md={3} key={idx}>
-              <Card sx={{ height: '100%', cursor: 'pointer' }} onClick={() => navigate(`/carreras/${carrera.id}`)}>
+            <Grid item xs={12} sm={6} md={4} lg={3} key={idx}>
+              <Card 
+                sx={{ 
+                  height: '100%', 
+                  cursor: 'pointer',
+                  '&:hover': {
+                    backgroundColor: '#f5f5f5',
+                    transform: 'translateY(-4px)',
+                    transition: 'all 0.3s ease-in-out'
+                  }
+                }} 
+                onClick={() => navigate(`/carreras/${carrera.id}`)}
+              >
                 <CardContent>
                   <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
                     {carrera.nombre}
