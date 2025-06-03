@@ -70,6 +70,111 @@ const carrerasData = {
       label: 'Ver puntajes oficiales en DEMRE'
     },
     malla: quimiMalla
+  },
+  fisica: {
+    nombre: 'Ingeniería Civil Física',
+    formacion: 'El/La Ingeniero/a Civil Físico/a de la Universidad Técnica Federico Santa María es un/a profesional con sólida formación en física, matemáticas y ciencias de la ingeniería. Está capacitado/a para modelar y resolver problemas complejos en diversas áreas de la tecnología, utilizando herramientas avanzadas de la física y las matemáticas. Puede desempeñarse en investigación científica, desarrollo tecnológico, y en la implementación de soluciones innovadoras en campos como la física aplicada, tecnologías cuánticas, nanotecnología, y energías renovables.',
+    info: [
+      { label: 'Título Profesional', value: 'Ingeniero Civil Físico o Ingeniera Civil Física' },
+      { label: 'Grado Académico', value: 'Licenciatura en Ciencias de la Ingeniería' },
+      { label: 'Duración de los estudios', value: '5 años (10 semestres académicos)' },
+      { label: 'Régimen', value: 'Diurno' },
+      { label: 'Lugar', value: 'Campus Casa Central Valparaíso' },
+      { label: 'Puntaje mínimo de corte', value: '665 pts' },
+      { label: 'Puntaje promedio', value: '685 pts' }
+    ],
+    departamento: {
+      url: 'https://www.fis.usm.cl/',
+      label: 'Conoce el sitio del Departamento de Física'
+    },
+    puntajes: {
+      url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/',
+      label: 'Ver puntajes oficiales en DEMRE'
+    }
+  },
+  minas: {
+    nombre: 'Ingeniería Civil de Minas',
+    formacion: 'El/La Ingeniero/a Civil de Minas de la Universidad Técnica Federico Santa María es un/a profesional capacitado/a para planificar, diseñar y gestionar operaciones mineras sustentables. Domina aspectos técnicos y económicos de la industria minera, con énfasis en la optimización de procesos, seguridad operacional y protección del medio ambiente. Está preparado/a para liderar proyectos mineros, aplicando tecnologías innovadoras y gestionando recursos de manera eficiente y responsable.',
+    info: [
+      { label: 'Título Profesional', value: 'Ingeniero Civil de Minas o Ingeniera Civil de Minas' },
+      { label: 'Grado Académico', value: 'Licenciatura en Ciencias de la Ingeniería' },
+      { label: 'Duración de los estudios', value: '5 años (10 semestres académicos)' },
+      { label: 'Régimen', value: 'Diurno' },
+      { label: 'Lugar', value: 'Campus Casa Central Valparaíso' },
+      { label: 'Puntaje mínimo de corte', value: '620 pts' },
+      { label: 'Puntaje promedio', value: '642 pts' }
+    ],
+    departamento: {
+      url: 'https://www.minas.usm.cl/',
+      label: 'Conoce el sitio del Departamento de Ingeniería de Minas'
+    },
+    puntajes: {
+      url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/',
+      label: 'Ver puntajes oficiales en DEMRE'
+    }
+  },
+  industrial: {
+    nombre: 'Ingeniería Civil Industrial',
+    formacion: 'El/La Ingeniero/a Civil Industrial de la Universidad Técnica Federico Santa María es un/a profesional con sólida formación en gestión de operaciones, finanzas y tecnologías. Está capacitado/a para optimizar procesos productivos y de servicios, diseñar estrategias empresariales y liderar proyectos de innovación. Utiliza herramientas analíticas avanzadas para la toma de decisiones y la mejora continua en organizaciones, con un enfoque en la sustentabilidad y la transformación digital.',
+    info: [
+      { label: 'Título Profesional', value: 'Ingeniero Civil Industrial o Ingeniera Civil Industrial' },
+      { label: 'Grado Académico', value: 'Licenciatura en Ciencias de la Ingeniería' },
+      { label: 'Duración de los estudios', value: '5 años (10 semestres académicos)' },
+      { label: 'Régimen', value: 'Diurno' },
+      { label: 'Lugar', value: 'Campus Casa Central Valparaíso y Campus San Joaquín' },
+      { label: 'Puntaje mínimo de corte', value: '680 pts' },
+      { label: 'Puntaje promedio', value: '705 pts' }
+    ],
+    departamento: {
+      url: 'https://www.industrias.usm.cl/',
+      label: 'Conoce el sitio del Departamento de Industrias'
+    },
+    puntajes: {
+      url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/',
+      label: 'Ver puntajes oficiales en DEMRE'
+    }
+  },
+  mecanica: {
+    nombre: 'Ingeniería Civil Mecánica',
+    formacion: 'El/La Ingeniero/a Civil Mecánico/a de la Universidad Técnica Federico Santa María es un/a profesional experto/a en el diseño, desarrollo y mantenimiento de sistemas mecánicos. Posee sólidos conocimientos en termodinámica, mecánica de fluidos, diseño de máquinas y gestión de mantenimiento. Está capacitado/a para liderar proyectos de ingeniería mecánica, implementar soluciones energéticas eficientes y desarrollar tecnologías innovadoras en la industria manufacturera y energética.',
+    info: [
+      { label: 'Título Profesional', value: 'Ingeniero Civil Mecánico o Ingeniera Civil Mecánica' },
+      { label: 'Grado Académico', value: 'Licenciatura en Ciencias de la Ingeniería' },
+      { label: 'Duración de los estudios', value: '5 años (10 semestres académicos)' },
+      { label: 'Régimen', value: 'Diurno' },
+      { label: 'Lugar', value: 'Campus Casa Central Valparaíso y Campus San Joaquín' },
+      { label: 'Puntaje mínimo de corte', value: '650 pts' },
+      { label: 'Puntaje promedio', value: '672 pts' }
+    ],
+    departamento: {
+      url: 'https://www.mecanica.usm.cl/',
+      label: 'Conoce el sitio del Departamento de Ingeniería Mecánica'
+    },
+    puntajes: {
+      url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/',
+      label: 'Ver puntajes oficiales en DEMRE'
+    }
+  },
+  electrica: {
+    nombre: 'Ingeniería Civil Eléctrica',
+    formacion: 'El/La Ingeniero/a Civil Eléctrico/a de la Universidad Técnica Federico Santa María es un/a profesional especializado/a en sistemas eléctricos y electrónicos. Cuenta con sólida formación en generación, transmisión y distribución de energía eléctrica, automatización y control de procesos. Está preparado/a para diseñar y gestionar sistemas eléctricos de potencia, desarrollar soluciones en energías renovables y liderar proyectos de innovación tecnológica en el campo de la electricidad y la electrónica.',
+    info: [
+      { label: 'Título Profesional', value: 'Ingeniero Civil Eléctrico o Ingeniera Civil Eléctrica' },
+      { label: 'Grado Académico', value: 'Licenciatura en Ciencias de la Ingeniería' },
+      { label: 'Duración de los estudios', value: '5 años (10 semestres académicos)' },
+      { label: 'Régimen', value: 'Diurno' },
+      { label: 'Lugar', value: 'Campus Casa Central Valparaíso y Campus San Joaquín' },
+      { label: 'Puntaje mínimo de corte', value: '655 pts' },
+      { label: 'Puntaje promedio', value: '678 pts' }
+    ],
+    departamento: {
+      url: 'https://www.electrica.usm.cl/',
+      label: 'Conoce el sitio del Departamento de Ingeniería Eléctrica'
+    },
+    puntajes: {
+      url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/',
+      label: 'Ver puntajes oficiales en DEMRE'
+    }
   }
   // ...agrega aquí los datos de las otras carreras...
 };
