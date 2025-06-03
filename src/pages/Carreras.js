@@ -2,6 +2,7 @@ import { Box, Typography, Grid, Card, CardContent, TextField } from '@mui/materi
 import { useNavigate } from 'react-router-dom';
 import campus from '../assets/images/campus.jpg';
 
+//Página 2
 const carreras = [
   { nombre: 'Arquitectura', id: 'arquitectura' },
   { nombre: 'Ingeniería Civil Informática', id: 'informatica' },

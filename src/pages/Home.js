@@ -2,6 +2,7 @@ import { Grid, Card, CardContent, Typography, CardMedia, Box, Button } from '@mu
 import diurnoImg from '../assets/images/diurno.jpg';
 import { useNavigate } from 'react-router-dom';
 
+//Página 1
 function Home() {
   const navigate = useNavigate();
   const admissionCards = [

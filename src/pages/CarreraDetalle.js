@@ -4,6 +4,7 @@ import infMalla from '../assets/images/infmalla.png';
 import arquiMalla from '../assets/images/arquimalla.png';
 import quimiMalla from '../assets/images/quimimalla.png';
 
+//Página 3
 const carrerasData = {
   arquitectura: {
     nombre: 'Arquitectura',
@@ -71,7 +72,6 @@ const carrerasData = {
     },
     malla: quimiMalla
   }
-  // ...agrega aquí los datos de las otras carreras...
 };
 
 function CarreraDetalle() {
