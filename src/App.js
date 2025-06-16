@@ -6,6 +6,9 @@ import CarreraDetalle from './pages/CarreraDetalle';
 import UnderDevelopment from './pages/UnderDevelopment';
 import Aranceles from './pages/Aranceles';
 import AdmisionPAES from './pages/AdmisionPAES';
+import BeneficiosMinisteriales from './pages/BeneficiosMinisteriales';
+import BecasAdmision from './pages/BecasAdmision';
+import ProgramasApoyo from './pages/ProgramasApoyo';
 import './App.css';
 
 function App() {
@@ -20,6 +23,9 @@ function App() {
           <Route path="/aranceles" element={<Aranceles />} />
           <Route path="/admision-paes" element={<AdmisionPAES />} />
           <Route path="/desarrollo" element={<UnderDevelopment />} />
+          <Route path="/beneficios-ministeriales" element={<BeneficiosMinisteriales />} />
+          <Route path="/becas-admision" element={<BecasAdmision />} />
+          <Route path="/programas-apoyo" element={<ProgramasApoyo />} />
         </Routes>
       </div>
     </Router>

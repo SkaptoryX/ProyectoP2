@@ -19,10 +19,10 @@ function Home() {
         { label: 'Admisión Centralizada - PAES', path: '/admision-paes' },
         { label: 'Admisión Ingreso Directo a Carreras Técnicas Universitarias', path: '/desarrollo' },
         { label: 'Admisión Especial', path: '/desarrollo' },
-        { label: 'Programas de Apoyo USM', path: '/desarrollo' },
-        { label: 'Becas de Admisión', path: '/desarrollo' },
-        { label: 'Beneficios Ministeriales', path: '/desarrollo' },
-        { label: 'Calendario Oficial Proceso Admisión', path: '/desarrollo' }
+        { label: 'Programas de Apoyo USM', path: '/programas-apoyo' },
+        { label: 'Becas de Admisión', path: '/becas-admision' },
+        { label: 'Beneficios Ministeriales', path: '/beneficios-ministeriales' },
+        { label: 'Calendario Oficial Proceso Admisión', path: 'https://demre.cl/calendario/calendario-proceso-2026', external: true }
       ]
     },
     {
