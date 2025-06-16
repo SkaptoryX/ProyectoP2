@@ -1,30 +1,31 @@
-import { Box, Typography, Paper, Grid } from '@mui/material';
-import { useParams } from 'react-router-dom';
+import { Box, Typography, Paper, Grid, Button, Modal, Backdrop } from '@mui/material'; // Added Modal, Backdrop
+import { useParams, useNavigate } from 'react-router-dom'; // Added useNavigate
+import { useState, useRef, useEffect } from 'react'; // Added useRef and useEffect
 import malla1 from '../assets/images/malla1.png';
-import malla2 from '../assets/images/malla2.png';
-import malla3 from '../assets/images/malla3.png';
+import malla2 from '../assets/images/malla2.webp';
+import malla3 from '../assets/images/malla3.webp';
 import malla4 from '../assets/images/malla4.png';
 import malla5 from '../assets/images/malla5.png';
-import malla6 from 'https://usm.cl/wp-content/uploads/2025/04/INGENIERIA-CIVIL-AMBIENTAL-1536x716.png';
-import malla7 from 'https://usm.cl/wp-content/uploads/2025/04/INGENIERIA-CIVIL-DE-MINAS_MALLA-1536x716.png';
-import malla8 from 'https://usm.cl/wp-content/uploads/2025/04/INGENIERIA-CIVIL-ELECTRICA_MALLA-1536x716.png';
-import malla9 from 'https://usm.cl/wp-content/uploads/2025/04/INGENIERIA-CIVIL-ELECTRONICA_MALLA-1536x716.png';
-import malla10 from 'https://usm.cl/wp-content/uploads/2025/04/INGENIERIA-CIVIL-EN-BIOTECNOLOGIA_MALLA-1536x716.png';
-import malla11 from 'https://usm.cl/wp-content/uploads/2025/04/INGENIERIA-CIVIL-FISICA_MALLA-1536x716.png';
-import malla12 from 'https://usm.cl/wp-content/uploads/2025/04/INGENIERIA-CIVIL-INDUSTRIAL_MALLA-1536x716.png';
-import malla13 from 'https://usm.cl/wp-content/uploads/2024/10/INGENIERIA-CIVIL-MATEMATICA-1-1536x716.png';
+import malla6 from '../assets/images/malla6.webp';
+import malla7 from '../assets/images/malla7.webp';
+import malla8 from '../assets/images/malla8.webp';
+import malla9 from '../assets/images/malla9.webp';
+import malla10 from '../assets/images/malla10.png';
+import malla11 from '../assets/images/malla11.webp';
+import malla12 from '../assets/images/malla12.webp';
+import malla13 from '../assets/images/malla13.webp';
 import malla14 from '../assets/images/malla14.png';
-import malla15 from 'https://usm.cl/wp-content/uploads/2024/10/INGENIERIA-CIVIL-METALURGICA-1-1536x716.png';
-import malla16 from 'https://usm.cl/wp-content/uploads/2025/04/INGENIERIA-CIVIL-PLAN-COMUN_MALLA-1536x918.png';
-import malla17 from 'https://usm.cl/wp-content/uploads/2025/04/INGENIERIA-CIVIL-TELEMATICA_MALLA-1536x716.png';
-import malla18 from 'https://usm.cl/wp-content/uploads/2025/04/ING_COMERCIAL_MALLA-1536x716.png';
+import malla15 from '../assets/images/malla15.webp';
+import malla16 from '../assets/images/malla16.webp';
+import malla17 from '../assets/images/malla17.webp';
+import malla18 from '../assets/images/malla18.webp';
 import malla19 from '../assets/images/malla19.png';
 import malla20 from '../assets/images/malla20.png';
 import malla21 from '../assets/images/malla21.png';
 import malla22 from '../assets/images/malla22.png';
 import malla23 from '../assets/images/malla23.png';
 import malla24 from '../assets/images/malla24.png';
-import malla25 from '../assets/images/malla24.png';
+import malla25 from '../assets/images/malla25.png';
 import malla26 from '../assets/images/malla26.png';
 import malla27 from '../assets/images/malla27.png';
 import malla28 from '../assets/images/malla28.png';
@@ -683,7 +684,7 @@ const carrerasData = {
   },
   'tecnico-universitario-en-electronica': {
     nombre: 'Técnico Universitario en Electrónica',
-    formacion: 'Formación integral en Técnico Universitario en Electrónica, preparando profesionales competentes para el mercado laboral actual y futuro, con énfasis en la innovación y el desarrollo tecnológico.',
+    formacion: 'Formación integral en Técnico Universitario en Electrónica, preparando profesionales competentes para el mercado laboral currente y futuro, con énfasis en la innovación y el desarrollo tecnológico.',
     info: [
       { label: 'Título Profesional', value: 'Profesional en Técnico Universitario en Electrónica' },
       { label: 'Grado Académico', value: 'Licenciatura Genérica en Ciencias y Tecnología' },
@@ -893,11 +894,74 @@ const carrerasData = {
 
 function CarreraDetalle() {
   const { carreraId } = useParams();
+  const navigate = useNavigate(); 
   const data = carrerasData[carreraId];
+  const [openModal, setOpenModal] = useState(false);
+  const [modalImage, setModalImage] = useState('');
+  
+  // New state for magnifying glass
+  const [magnifierPosition, setMagnifierPosition] = useState({ x: 0, y: 0 });
+  const [showMagnifier, setShowMagnifier] = useState(false);
+  const imgRef = useRef(null);
+
+  const handleOpenModal = (image) => {
+    setModalImage(image);
+    setOpenModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setOpenModal(false);
+    setModalImage('');
+    setShowMagnifier(false);
+  };
+
+  // Add event handlers for the magnifying glass
+  const handleMouseMove = (e) => {
+    if (!imgRef.current) return;
+
+    // Get position of image
+    const { left, top, width, height } = imgRef.current.getBoundingClientRect();
+
+    // Calculate cursor position relative to the image
+    const x = ((e.clientX - left) / width) * 100;
+    const y = ((e.clientY - top) / height) * 100;
+    
+    // Update position state
+    setMagnifierPosition({ x, y });
+  };
+
+  // When window resizes, reset magnifier
+  useEffect(() => {
+    const handleResize = () => {
+      setShowMagnifier(false);
+    };
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   if (!data) {
     return <Typography variant="h5" sx={{ m: 4 }}>Carrera no encontrada</Typography>;
   }
+
+  // Magnifier style
+  const magnifierStyle = {
+    position: 'absolute',
+    border: '2px solid white',
+    borderRadius: '2px', // Almost rectangular
+    pointerEvents: 'none', // Ensure it doesn't interfere with mouse events
+    width: 250, // Increased from 200 to 300
+    height: 550, // Increased from 150 to 200
+    top: `${magnifierPosition.y}%`,
+    left: `${magnifierPosition.x}%`,
+    transform: 'translate(-50%, -50%)',
+    backgroundImage: `url(${modalImage})`,
+    backgroundPosition: `${magnifierPosition.x}% ${magnifierPosition.y}%`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: '800%', // Increased zoom from 300% to 400%
+    zIndex: 1500,
+    boxShadow: '0 0 100px rgba(0,0,0,0.5)'
+  };
 
   return (
     <Box>
@@ -913,7 +977,7 @@ function CarreraDetalle() {
         </Typography>
       </Box>
 
-      <Box sx={{ maxWidth: 1200, mx: 'auto', px: 2 }}>
+      <Box sx={{ maxWidth: 1920, mx: 'auto', px: 2 }}>
         <Breadcrumb 
           items={[
             { label: 'Inicio', path: '/' },
@@ -936,11 +1000,13 @@ function CarreraDetalle() {
                 <Typography variant="h5" sx={{ fontWeight: 700, mb: 2 }}>
                   Plan de Estudios*
                 </Typography>
-                <img 
-                  src={data.malla} 
-                  alt="Malla Curricular"
-                  style={{ width: '100%', height: 'auto' }}
-                />
+                <Box onClick={() => handleOpenModal(data.malla)} sx={{ cursor: 'pointer', '&:hover': { boxShadow: 6 } }}>
+                  <img 
+                    src={data.malla} 
+                    alt="Malla Curricular"
+                    style={{ width: '100%', height: 'auto', display: 'block' }}
+                  />
+                </Box>
               </Box>
             )}
           </Grid>
@@ -979,7 +1045,72 @@ function CarreraDetalle() {
             </Paper>
           </Grid>
         </Grid>
+        <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 4, mb: 4 }}>
+          <Button 
+            variant="contained" 
+            size="large" 
+            sx={{ px: 5, py: 2, fontSize: '1.2rem' }}
+            onClick={() => navigate('/carreras')}
+          >
+            Volver a Carreras
+          </Button>
+        </Box>
       </Box>
+      <Modal
+        open={openModal}
+        onClose={handleCloseModal}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500,
+          sx: { backgroundColor: 'rgba(0, 0, 0, 0.7)' } // Darkened backdrop
+        }}
+        sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+      >
+        <Box
+          sx={{
+            bgcolor: 'background.paper',
+            boxShadow: 24,
+            p: 1,
+            outline: 'none',
+            maxWidth: '90vw',
+            maxHeight: '90vh',
+            overflow: 'auto',
+            position: 'relative',
+            zIndex: 1300, // Ensure it's above the backdrop
+          }}
+        >
+          <Box
+            position="relative"
+            onMouseEnter={() => setShowMagnifier(true)}
+            onMouseLeave={() => setShowMagnifier(false)}
+            onMouseMove={handleMouseMove}
+          >
+            <img 
+              ref={imgRef}
+              src={modalImage} 
+              alt="Malla Curricular Zoom" 
+              style={{ 
+                display: 'block', 
+                maxWidth: '100%', 
+                maxHeight: '85vh',
+                background: '#fff'
+              }} 
+            />
+            {showMagnifier && (
+              <Box sx={magnifierStyle} />
+            )}
+          </Box>
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2 }}>
+            <Typography variant="caption" color="text.secondary">
+              Mueve el cursor sobre la imagen para ver detalles con la lupa
+            </Typography>
+            <Button onClick={handleCloseModal} variant="outlined" size="small">
+              Cerrar
+            </Button>
+          </Box>
+        </Box>
+      </Modal>
     </Box>
   );
 }

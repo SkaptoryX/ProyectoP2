@@ -71,7 +71,8 @@ function Home() {
         color: 'white', 
         p: 2, 
         textAlign: 'center',
-        mb: 3
+        mb: 3,
+        boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)'
       }}>
         <Typography variant="h6">
           Recorre nuestros campus o solicita una visita en tu colegio aquí!
@@ -79,25 +80,50 @@ function Home() {
       </Box>
 
       <Box sx={{ p: 3 }}>
-        <Typography variant="h4" component="h1" gutterBottom sx={{ mb: 4 }}>
+        <Typography variant="h4" component="h1" gutterBottom sx={{ mb: 4, fontWeight: 'bold' }}>
           Admisión
         </Typography>
 
         <Grid container spacing={4}>
           {admissionCards.map((card, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
-              <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+              <Card sx={{ 
+                height: '100%', 
+                display: 'flex', 
+                flexDirection: 'column',
+                borderRadius: '12px',
+                overflow: 'hidden',
+                border: '1px solid #e0e0e0',
+                boxShadow: '0 10px 30px rgba(0,74,135,0.15)',
+                transition: 'transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease',
+                '&:hover': {
+                  transform: 'translateY(-8px)',
+                  boxShadow: '0 20px 40px rgba(0,74,135,0.25)',
+                  borderColor: '#b3d7ff',
+                }
+              }}>
                 <CardMedia
                   component="img"
-                  height="200"
                   image={card.image}
                   alt={card.title}
+                  sx={{
+                    width: '100%',
+                    aspectRatio: '16/9',
+                    objectFit: 'cover'
+                  }}
                 />
-                <CardContent sx={{ flexGrow: 1 }}>
+                <CardContent sx={{ 
+                  flexGrow: 1, 
+                  p: 3,
+                  backgroundColor: '#fcfcfc',
+                  borderTop: '1px solid #f0f0f0'
+                }}>
                   <Typography variant="h6" component="h2" gutterBottom sx={{ 
                     borderBottom: '2px solid #004a87',
                     pb: 1,
-                    mb: 2
+                    mb: 2,
+                    fontWeight: 'bold',
+                    color: '#00326b'
                   }}>
                     {card.title}
                   </Typography>
@@ -107,10 +133,20 @@ function Home() {
                       variant="outlined"
                       fullWidth
                       sx={{ 
-                        mb: 1, 
+                        mb: 1.5, 
                         textTransform: 'none',
                         justifyContent: 'flex-start',
-                        pl: 2
+                        pl: 2,
+                        py: 1,
+                        borderRadius: '8px',
+                        borderColor: '#e0e0e0',
+                        color: '#333',
+                        fontWeight: 500,
+                        '&:hover': {
+                          backgroundColor: '#f0f7ff',
+                          borderColor: '#004a87',
+                          color: '#004a87',
+                        }
                       }}
                       onClick={() => item.external ? window.open(item.path) : navigate(item.path)}
                       endIcon={item.external ? '↗' : null}
