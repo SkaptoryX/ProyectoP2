@@ -1,4 +1,4 @@
-# Tarea10DIU - Página de Admisión USM
+# ProyectoP2 - Página de Admisión USM
 
 Este proyecto es una réplica de la página de admisión de la Universidad Técnica Federico Santa María, desarrollada con React.
 
