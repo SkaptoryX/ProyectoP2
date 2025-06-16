@@ -17,8 +17,8 @@ function Home() {
         { label: 'Carreras', path: '/carreras' }, // This one goes to Carreras.js
         { label: 'Aranceles', path: '/aranceles' }, // Updated path
         { label: 'Admisión Centralizada - PAES', path: '/admision-paes' },
-        { label: 'Admisión Ingreso Directo a Carreras Técnicas Universitarias', path: '/desarrollo' },
-        { label: 'Admisión Especial', path: '/desarrollo' },
+        { label: 'Admisión Ingreso Directo a Carreras Técnicas Universitarias', path: '/admision-directa' },
+        { label: 'Admisión Especial', path: '/admision-especial' },
         { label: 'Programas de Apoyo USM', path: '/programas-apoyo' },
         { label: 'Becas de Admisión', path: '/becas-admision' },
         { label: 'Beneficios Ministeriales', path: '/beneficios-ministeriales' },

@@ -9,6 +9,8 @@ import AdmisionPAES from './pages/AdmisionPAES';
 import BeneficiosMinisteriales from './pages/BeneficiosMinisteriales';
 import BecasAdmision from './pages/BecasAdmision';
 import ProgramasApoyo from './pages/ProgramasApoyo';
+import AdmisionEspecial from './pages/AdmisionEspecial';
+import AdmisionDirecta from './pages/AdmisionDirecta';
 import './App.css';
 
 function App() {
@@ -26,6 +28,8 @@ function App() {
           <Route path="/beneficios-ministeriales" element={<BeneficiosMinisteriales />} />
           <Route path="/becas-admision" element={<BecasAdmision />} />
           <Route path="/programas-apoyo" element={<ProgramasApoyo />} />
+          <Route path="/admision-especial" element={<AdmisionEspecial />} />
+          <Route path="/admision-directa" element={<AdmisionDirecta />} />
         </Routes>
       </div>
     </Router>
