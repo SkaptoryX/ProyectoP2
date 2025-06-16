@@ -1,6 +1,7 @@
 import { Box, Typography, Grid, Card, CardContent, TextField, CardMedia } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import campus from '../assets/images/campus.jpg';
+import Breadcrumb from '../components/Breadcrumb';
 
 //Página 2
 const carreras = [
@@ -83,11 +84,13 @@ function Carreras() {
       </Box>
 
       <Box sx={{ maxWidth: 1200, mx: 'auto', px: 2 }}>
-        <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-          <Typography variant="body2" color="text.secondary">
-            Inicio &gt; Admisión &gt; Carreras
-          </Typography>
-        </Box>
+        <Breadcrumb 
+          items={[
+            { label: 'Inicio', path: '/' },
+            { label: 'Admisión', path: '/' },
+            { label: 'Carreras' }
+          ]}
+        />
         <Typography variant="h5" sx={{ fontWeight: 700, mb: 1 }}>
           Estudia en la USM: Carreras de Pregrado
         </Typography>

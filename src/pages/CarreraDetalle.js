@@ -1,8 +1,9 @@
-import { Box, Typography, Paper, Grid, Card, CardContent } from '@mui/material';
+import { Box, Typography, Paper, Grid } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import infMalla from '../assets/images/infmalla.png';
 import arquiMalla from '../assets/images/arquimalla.png';
 import quimiMalla from '../assets/images/quimimalla.png';
+import Breadcrumb from '../components/Breadcrumb';
 
 //Página 3
 const carrerasData = {
@@ -97,6 +98,14 @@ function CarreraDetalle() {
       </Box>
 
       <Box sx={{ maxWidth: 1200, mx: 'auto', px: 2 }}>
+        <Breadcrumb 
+          items={[
+            { label: 'Inicio', path: '/' },
+            { label: 'Admisión', path: '/' },
+            { label: 'Carreras', path: '/carreras' },
+            { label: data.nombre }
+          ]}
+        />
         <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
           <Typography variant="body2" color="text.secondary">
             Inicio &gt; Admisión &gt; Carreras &gt; {data.nombre}
