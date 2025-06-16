@@ -1,59 +1,3 @@
-import { Box, Typography, Paper, Grid } from '@mui/material';
-import { useParams } from 'react-router-dom';
-import malla1 from '../assets/images/malla1.png';
-import malla2 from '../assets/images/malla2.png';
-import malla3 from '../assets/images/malla3.png';
-import malla4 from '../assets/images/malla4.png';
-import malla5 from '../assets/images/malla5.png';
-import malla6 from 'https://usm.cl/wp-content/uploads/2025/04/INGENIERIA-CIVIL-AMBIENTAL-1536x716.png';
-import malla7 from 'https://usm.cl/wp-content/uploads/2025/04/INGENIERIA-CIVIL-DE-MINAS_MALLA-1536x716.png';
-import malla8 from 'https://usm.cl/wp-content/uploads/2025/04/INGENIERIA-CIVIL-ELECTRICA_MALLA-1536x716.png';
-import malla9 from 'https://usm.cl/wp-content/uploads/2025/04/INGENIERIA-CIVIL-ELECTRONICA_MALLA-1536x716.png';
-import malla10 from 'https://usm.cl/wp-content/uploads/2025/04/INGENIERIA-CIVIL-EN-BIOTECNOLOGIA_MALLA-1536x716.png';
-import malla11 from 'https://usm.cl/wp-content/uploads/2025/04/INGENIERIA-CIVIL-FISICA_MALLA-1536x716.png';
-import malla12 from 'https://usm.cl/wp-content/uploads/2025/04/INGENIERIA-CIVIL-INDUSTRIAL_MALLA-1536x716.png';
-import malla13 from 'https://usm.cl/wp-content/uploads/2024/10/INGENIERIA-CIVIL-MATEMATICA-1-1536x716.png';
-import malla14 from '../assets/images/malla14.png';
-import malla15 from 'https://usm.cl/wp-content/uploads/2024/10/INGENIERIA-CIVIL-METALURGICA-1-1536x716.png';
-import malla16 from 'https://usm.cl/wp-content/uploads/2025/04/INGENIERIA-CIVIL-PLAN-COMUN_MALLA-1536x918.png';
-import malla17 from 'https://usm.cl/wp-content/uploads/2025/04/INGENIERIA-CIVIL-TELEMATICA_MALLA-1536x716.png';
-import malla18 from 'https://usm.cl/wp-content/uploads/2025/04/ING_COMERCIAL_MALLA-1536x716.png';
-import malla19 from '../assets/images/malla19.png';
-import malla20 from '../assets/images/malla20.png';
-import malla21 from '../assets/images/malla21.png';
-import malla22 from '../assets/images/malla22.png';
-import malla23 from '../assets/images/malla23.png';
-import malla24 from '../assets/images/malla24.png';
-import malla25 from '../assets/images/malla24.png';
-import malla26 from '../assets/images/malla26.png';
-import malla27 from '../assets/images/malla27.png';
-import malla28 from '../assets/images/malla28.png';
-import malla29 from '../assets/images/malla29.png';
-import malla30 from '../assets/images/malla30.png';
-import malla31 from '../assets/images/malla31.png';
-import malla32 from '../assets/images/malla32.png';
-import malla33 from '../assets/images/malla33.png';
-import malla34 from '../assets/images/malla34.png';
-import malla35 from '../assets/images/malla35.png';
-import malla36 from '../assets/images/malla36.png';
-import malla37 from '../assets/images/malla37.png';
-import malla38 from '../assets/images/malla38.png';
-import malla39 from '../assets/images/malla39.png';
-import malla40 from '../assets/images/malla40.png';
-import malla41 from '../assets/images/malla41.png';
-import malla42 from '../assets/images/malla42.png';
-import malla43 from '../assets/images/malla43.png';
-import malla44 from '../assets/images/malla44.png';
-import malla45 from '../assets/images/malla45.png';
-import malla46 from '../assets/images/malla46.png';
-import malla47 from '../assets/images/malla47.png';
-import malla48 from '../assets/images/malla48.png';
-import malla49 from '../assets/images/malla48.png';
-import malla50 from '../assets/images/malla48.png';
-import malla51 from '../assets/images/malla48.png';
-import Breadcrumb from '../components/Breadcrumb';
-
-//Página 3
 const carrerasData = {
   arquitectura: {
     nombre: 'Arquitectura',
@@ -75,7 +19,7 @@ const carrerasData = {
       url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/',
       label: 'Ver puntajes oficiales en DEMRE'
     },
-    malla: malla1
+    malla: Malla1
   },
   'ingenieria-civil-informatica': {
     nombre: 'Ingeniería Civil Informática',
@@ -97,7 +41,7 @@ const carrerasData = {
       url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/',
       label: 'Ver puntajes oficiales en DEMRE'
     },
-    malla: malla2
+    malla: Malla2
   },
   'ingenieria-civil-quimica': {
     nombre: 'Ingeniería Civil Química',
@@ -119,7 +63,7 @@ const carrerasData = {
       url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/',
       label: 'Ver puntajes oficiales en DEMRE'
     },
-    malla: malla3
+    malla: Malla3
   },
   'construccion-civil': {
     nombre: 'Construcción Civil',
@@ -135,7 +79,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla4
+    malla: 'Malla no disponible'
   },
   'ingenieria-civil': {
     nombre: 'Ingeniería Civil',
@@ -151,7 +95,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla5
+    malla: 'Malla no disponible'
   },
   'ingenieria-civil-ambiental': {
     nombre: 'Ingeniería Civil Ambiental',
@@ -167,7 +111,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla6
+    malla: 'Malla no disponible'
   },
   'ingenieria-civil-de-minas': {
     nombre: 'Ingeniería Civil de Minas',
@@ -183,7 +127,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla7
+    malla: 'Malla no disponible'
   },
   'ingenieria-civil-electrica': {
     nombre: 'Ingeniería Civil Eléctrica',
@@ -199,7 +143,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla8
+    malla: 'Malla no disponible'
   },
   'ingenieria-civil-electronica': {
     nombre: 'Ingeniería Civil Electrónica',
@@ -215,7 +159,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla9
+    malla: 'Malla no disponible'
   },
   'ingenieria-civil-en-biotecnologia': {
     nombre: 'Ingeniería Civil en Biotecnología',
@@ -231,7 +175,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla10
+    malla: 'Malla no disponible'
   },
   'ingenieria-civil-fisica': {
     nombre: 'Ingeniería Civil Física',
@@ -247,7 +191,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla11
+    malla: 'Malla no disponible'
   },
   'ingenieria-civil-industrial': {
     nombre: 'Ingeniería Civil Industrial',
@@ -263,7 +207,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla12
+    malla: 'Malla no disponible'
   },
   'ingenieria-civil-matematica': {
     nombre: 'Ingeniería Civil Matemática',
@@ -279,7 +223,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla13
+    malla: 'Malla no disponible'
   },
   'ingenieria-civil-mecanica': {
     nombre: 'Ingeniería Civil Mecánica',
@@ -295,7 +239,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla14
+    malla: 'Malla no disponible'
   },
   'ingenieria-civil-metalurgica': {
     nombre: 'Ingeniería Civil Metalúrgica',
@@ -311,7 +255,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla15
+    malla: 'Malla no disponible'
   },
   'ingenieria-civil-plan-comun': {
     nombre: 'Ingeniería Civil Plan Común',
@@ -327,7 +271,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla16
+    malla: 'Malla no disponible'
   },
   'ingenieria-civil-telematica': {
     nombre: 'Ingeniería Civil Telemática',
@@ -343,7 +287,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla17
+    malla: 'Malla no disponible'
   },
   'ingenieria-comercial': {
     nombre: 'Ingeniería Comercial',
@@ -359,7 +303,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla18
+    malla: 'Malla no disponible'
   },
   'ingenieria-en-aviacion-comercial': {
     nombre: 'Ingeniería en Aviación Comercial',
@@ -375,7 +319,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla19
+    malla: 'Malla no disponible'
   },
   'ingenieria-en-biotecnologia': {
     nombre: 'Ingeniería en Biotecnología',
@@ -391,7 +335,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla20
+    malla: 'Malla no disponible'
   },
   'ingenieria-en-diseno-de-productos': {
     nombre: 'Ingeniería en Diseño de Productos',
@@ -407,7 +351,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla21
+    malla: 'Malla no disponible'
   },
   'ingenieria-en-fabricacion-y-diseno-industrial': {
     nombre: 'Ingeniería en Fabricación y Diseño Industrial',
@@ -423,7 +367,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla22
+    malla: 'Malla no disponible'
   },
   'ingenieria-en-informatica': {
     nombre: 'Ingeniería en Informática',
@@ -439,7 +383,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla23
+    malla: 'Malla no disponible'
   },
   'ingenieria-en-mantenimiento-industrial': {
     nombre: 'Ingeniería en Mantenimiento Industrial',
@@ -455,7 +399,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla24
+    malla: 'Malla no disponible'
   },
   'ingenieria-en-prevencion-de-riesgos-laborales-y-ambientales': {
     nombre: 'Ingeniería en Prevención de Riesgos Laborales y Ambientales',
@@ -471,7 +415,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla25
+    malla: 'Malla no disponible'
   },
   'licenciatura-en-astrofisica': {
     nombre: 'Licenciatura en Astrofísica',
@@ -487,7 +431,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla26
+    malla: 'Malla no disponible'
   },
   'licenciatura-en-ciencias-mencion-quimica': {
     nombre: 'Licenciatura en Ciencias, mención Química',
@@ -503,7 +447,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla27
+    malla: 'Malla no disponible'
   },
   'licenciatura-en-fisica': {
     nombre: 'Licenciatura en Física',
@@ -519,7 +463,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla28
+    malla: 'Malla no disponible'
   },
   'quimico': {
     nombre: 'Químico',
@@ -535,7 +479,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla29
+    malla: 'Malla no disponible'
   },
   'tecnico-universitario-dibujante-proyectista': {
     nombre: 'Técnico Universitario Dibujante Proyectista',
@@ -551,7 +495,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla30
+    malla: 'Malla no disponible'
   },
   'tecnico-universitario-en-administracion-de-empresas': {
     nombre: 'Técnico Universitario en Administración de Empresas',
@@ -567,7 +511,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla31
+    malla: 'Malla no disponible'
   },
   'tecnico-universitario-en-alimentos': {
     nombre: 'Técnico Universitario en Alimentos',
@@ -583,7 +527,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla32
+    malla: 'Malla no disponible'
   },
   'tecnico-universitario-en-automatizacion-y-control': {
     nombre: 'Técnico Universitario en Automatización y Control',
@@ -599,7 +543,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla33
+    malla: 'Malla no disponible'
   },
   'tecnico-universitario-en-biotecnologia': {
     nombre: 'Técnico Universitario en Biotecnología',
@@ -615,7 +559,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla34
+    malla: 'Malla no disponible'
   },
   'tecnico-universitario-en-ciencia-de-datos': {
     nombre: 'Técnico Universitario en Ciencia de Datos',
@@ -631,7 +575,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla35
+    malla: 'Malla no disponible'
   },
   'tecnico-universitario-en-construccion': {
     nombre: 'Técnico Universitario en Construcción',
@@ -647,7 +591,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla36
+    malla: 'Malla no disponible'
   },
   'tecnico-universitario-en-control-del-medio-ambiente': {
     nombre: 'Técnico Universitario en Control del Medio Ambiente',
@@ -663,7 +607,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla37
+    malla: 'Malla no disponible'
   },
   'tecnico-universitario-en-electricidad': {
     nombre: 'Técnico Universitario en Electricidad',
@@ -679,7 +623,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla38
+    malla: 'Malla no disponible'
   },
   'tecnico-universitario-en-electronica': {
     nombre: 'Técnico Universitario en Electrónica',
@@ -695,7 +639,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla39
+    malla: 'Malla no disponible'
   },
   'tecnico-universitario-en-energias-renovables': {
     nombre: 'Técnico Universitario en Energías Renovables',
@@ -711,7 +655,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla40
+    malla: 'Malla no disponible'
   },
   'tecnico-universitario-en-informatica': {
     nombre: 'Técnico Universitario en Informática',
@@ -727,7 +671,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla41
+    malla: 'Malla no disponible'
   },
   'tecnico-universitario-en-mantenimiento-aeronautico': {
     nombre: 'Técnico Universitario en Mantenimiento Aeronáutico',
@@ -743,7 +687,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla42
+    malla: 'Malla no disponible'
   },
   'tecnico-universitario-en-mantenimiento-industrial': {
     nombre: 'Técnico Universitario en Mantenimiento Industrial',
@@ -759,7 +703,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla43
+    malla: 'Malla no disponible'
   },
   'tecnico-universitario-en-mecanica-automotriz': {
     nombre: 'Técnico Universitario en Mecánica Automotriz',
@@ -775,7 +719,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla44
+    malla: 'Malla no disponible'
   },
   'tecnico-universitario-en-mecanica-industrial': {
     nombre: 'Técnico Universitario en Mecánica Industrial',
@@ -791,7 +735,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla45
+    malla: 'Malla no disponible'
   },
   'tecnico-universitario-en-mineria-y-metalurgia': {
     nombre: 'Técnico Universitario en Minería y Metalurgia',
@@ -807,7 +751,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla46
+    malla: 'Malla no disponible'
   },
   'tecnico-universitario-en-proyectos-de-ingenieria': {
     nombre: 'Técnico Universitario en Proyectos de Ingeniería',
@@ -823,7 +767,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla47
+    malla: 'Malla no disponible'
   },
   'tecnico-universitario-en-quimica-mencion-quimica-analitica': {
     nombre: 'Técnico Universitario en Química, mención Química Analítica',
@@ -839,7 +783,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla48
+    malla: 'Malla no disponible'
   },
   'tecnico-universitario-en-quimica-mencion-quimica-industrial': {
     nombre: 'Técnico Universitario en Química, mención Química Industrial',
@@ -855,7 +799,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla49
+    malla: 'Malla no disponible'
   },
   'tecnico-universitario-en-robotica-y-mecatronica': {
     nombre: 'Técnico Universitario en Robótica y Mecatrónica',
@@ -871,7 +815,7 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla50
+    malla: 'Malla no disponible'
   },
   'tecnico-universitario-en-telecomunicaciones-y-redes': {
     nombre: 'Técnico Universitario en Telecomunicaciones y Redes',
@@ -887,101 +831,6 @@ const carrerasData = {
     ],
     departamento: { url: '#', label: 'Sitio web del Departamento' },
     puntajes: { url: 'https://acceso.mineduc.cl/proceso-admision/puntajes-de-corte/', label: 'Ver puntajes oficiales en DEMRE' },
-    malla: malla51
+    malla: 'Malla no disponible'
   }
 };
-
-function CarreraDetalle() {
-  const { carreraId } = useParams();
-  const data = carrerasData[carreraId];
-
-  if (!data) {
-    return <Typography variant="h5" sx={{ m: 4 }}>Carrera no encontrada</Typography>;
-  }
-
-  return (
-    <Box>
-      <Box sx={{ height: 60, mb: 2, bgcolor: '#003366', display: 'flex', alignItems: 'center', pl: 4 }}>
-        <Typography
-          variant="h4"
-          sx={{
-            color: 'white',
-            fontWeight: 700
-          }}
-        >
-          {data.nombre}
-        </Typography>
-      </Box>
-
-      <Box sx={{ maxWidth: 1200, mx: 'auto', px: 2 }}>
-        <Breadcrumb 
-          items={[
-            { label: 'Inicio', path: '/' },
-            { label: 'Admisión', path: '/' },
-            { label: 'Carreras', path: '/carreras' },
-            { label: data.nombre }
-          ]}
-        />
-
-        <Grid container spacing={3}>
-          <Grid item xs={12} md={8}>
-            <Typography variant="h5" sx={{ fontWeight: 700, mb: 2 }}>
-              Perfil de Egreso
-            </Typography>
-            <Typography variant="body1" sx={{ mb: 4 }}>
-              {data.formacion}
-            </Typography>
-            {data.malla && (
-              <Box sx={{ mt: 4 }}>
-                <Typography variant="h5" sx={{ fontWeight: 700, mb: 2 }}>
-                  Plan de Estudios*
-                </Typography>
-                <img 
-                  src={data.malla} 
-                  alt="Malla Curricular"
-                  style={{ width: '100%', height: 'auto' }}
-                />
-              </Box>
-            )}
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <Paper elevation={2} sx={{ p: 2, mb: 2 }}>
-              {data.info.map((item, idx) => (
-                <Box key={idx} sx={{ mb: 2 }}>
-                  <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>
-                    {item.label}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {item.value}
-                  </Typography>
-                </Box>
-              ))}
-              <Box sx={{ mt: 3 }}>
-                <a
-                  href={data.departamento.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: '#00629b', textDecoration: 'underline', fontWeight: 700 }}
-                >
-                  {data.departamento.label}
-                </a>
-              </Box>
-              <Box sx={{ mt: 2 }}>
-                <a
-                  href={data.puntajes.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: '#00629b', textDecoration: 'underline', fontWeight: 700 }}
-                >
-                  {data.puntajes.label}
-                </a>
-              </Box>
-            </Paper>
-          </Grid>
-        </Grid>
-      </Box>
-    </Box>
-  );
-}
-
-export default CarreraDetalle;
