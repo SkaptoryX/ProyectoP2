@@ -28,7 +28,7 @@ const carrerasData = {
     },
     malla: arquiMalla
   },
-  informatica: {
+  'ingenieria-civil-informatica': {
     nombre: 'Ingeniería Civil Informática',
     formacion: 'El/La Ingeniero/a Civil Informático/a de la Universidad Técnica Federico Santa María de forma para apoyar estratégicamente la mejora continua de las organizaciones, integrando eficientemente a las personas y tecnologías de información. Domina y aplica las tecnologías basadas en técnicas cuantitativas en contextos de incertidumbre, diseñando soluciones de software sostenibles y escalables, reflejando su compromiso con la calidad y la innovación. Es capaz de realizar el análisis de sistemas y arquitecturas computacionales a nivel de rendimiento, conectividad y seguridad, y define soluciones computacionales robustas, aplicando algoritmos y fundamentos teóricos para resolver problemas en ingeniería.',
     info: [
@@ -50,7 +50,7 @@ const carrerasData = {
     },
     malla: infMalla
   },
-  quimica: {
+  'ingenieria-civil-quimica': {
     nombre: 'Ingeniería Civil Química',
     formacion: 'El/La Ingeniero/a Civil Químico/a de la Universidad Técnica Federico Santa María es un/a profesional con sólida formación científico-tecnológica en el área de la ingeniería química. Está capacitado/a para crear y desarrollar soluciones innovadoras y tradicionales, asumismo, procesos de liderazgo en la gestión de empresas. A su vez, podrá diseñar, evaluar y ejecutar proyectos utilizando tecnologías y herramientas de análisis y evaluación de riesgos de proceso, optimizando el uso de los recursos disponibles para asegurar el cumplimiento de la legislación vigente.',
     info: [
