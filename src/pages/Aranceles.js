@@ -142,6 +142,378 @@ const arancelesData = [
     codigo: "15300",
     campus: "San Joaquín",
     valor: "6.710.000"
+  },
+  { 
+    carrera: "Ingeniería Civil Química",
+    codigo: "15150",
+    campus: "Casa Central Valparaíso",
+    valor: "6.710.000"
+  },
+  { 
+    carrera: "Ingeniería Civil Química",
+    codigo: "15350",
+    campus: "San Joaquín",
+    valor: "6.710.000"
+  },
+  { 
+    carrera: "Ingeniería Civil Telemática",
+    codigo: "15161",
+    campus: "Casa Central Valparaíso",
+    valor: "6.710.000"
+  },
+  { 
+    carrera: "Ingeniería Civil Telemática",
+    codigo: "15361",
+    campus: "San Joaquín",
+    valor: "6.710.000"
+  },
+  { 
+    carrera: "Ingeniería Civil en Biotecnología",
+    codigo: "15186",
+    campus: "Casa Central Valparaíso",
+    valor: "6.710.000"
+  },
+  { 
+    carrera: "Ingeniería Civil en Biotecnología",
+    codigo: "15386",
+    campus: "San Joaquín",
+    valor: "6.710.000"
+  },
+  { 
+    carrera: "Ingeniería Comercial",
+    codigo: "15171",
+    campus: "Casa Central Valparaíso",
+    valor: "6.710.000"
+  },
+  { 
+    carrera: "Ingeniería Comercial",
+    codigo: "15271",
+    campus: "Vitacura",
+    valor: "6.710.000"
+  },
+  { 
+    carrera: "Ingeniería Eléctrica",
+    codigo: "–",
+    campus: "Casa Central Valparaíso",
+    valor: "5.660.000"
+  },
+  { 
+    carrera: "Ingeniería en Biotecnología",
+    codigo: "15485",
+    campus: "Viña del Mar",
+    valor: "4.880.000"
+  },
+  { 
+    carrera: "Ingeniería en Biotecnología",
+    codigo: "15585",
+    campus: "Concepción",
+    valor: "4.880.000"
+  },
+  { 
+    carrera: "Ingeniería en Diseño de Productos",
+    codigo: "15181",
+    campus: "Casa Central Valparaíso",
+    valor: "5.660.000"
+  },
+  { 
+    carrera: "Ingeniería en Diseño de Productos",
+    codigo: "15381",
+    campus: "San Joaquín",
+    valor: "5.660.000"
+  },
+  { 
+    carrera: "Ingeniería en Aviación Comercial",
+    codigo: "15220",
+    campus: "Vitacura",
+    valor: "6.710.000"
+  },
+  { 
+    carrera: "Ingeniería en Fabricación y Diseño Industrial",
+    codigo: "15441",
+    campus: "Viña del Mar",
+    valor: "4.880.000"
+  },
+  { 
+    carrera: "Ingeniería en Mantenimiento Industrial",
+    codigo: "15440",
+    campus: "Viña del Mar",
+    valor: "4.880.000"
+  },
+  { 
+    carrera: "Ingeniería en Mantenimiento Industrial",
+    codigo: "15540",
+    campus: "Concepción",
+    valor: "4.880.000"
+  },
+  { 
+    carrera: "Ingeniería en Prevención de Riesgos Laborales y Ambientales",
+    codigo: "15474",
+    campus: "Viña del Mar",
+    valor: "4.880.000"
+  },
+  { 
+    carrera: "Ingeniería en Prevención de Riesgos Laborales y Ambientales",
+    codigo: "15574",
+    campus: "Concepción",
+    valor: "4.880.000"
+  },
+  { 
+    carrera: "Ingeniería en Informática",
+    codigo: "15462",
+    campus: "Viña del Mar",
+    valor: "4.880.000"
+  },
+  { 
+    carrera: "Ingeniería en Informática",
+    codigo: "15562",
+    campus: "Concepción",
+    valor: "4.880.000"
+  },
+  { 
+    carrera: "Licenciatura en Astrofísica",
+    codigo: "15103",
+    campus: "Casa Central Valparaíso",
+    valor: "4.740.000"
+  },
+  { 
+    carrera: "Licenciatura en Astrofísica",
+    codigo: "15303",
+    campus: "San Joaquín",
+    valor: "4.740.000"
+  },
+  { 
+    carrera: "Licenciatura en Ciencias, mención Química",
+    codigo: "–",
+    campus: "Casa Central Valparaíso",
+    valor: "4.740.000"
+  },
+  { 
+    carrera: "Licenciatura en Física",
+    codigo: "15102",
+    campus: "Casa Central Valparaíso",
+    valor: "4.740.000"
+  },
+  { 
+    carrera: "Licenciatura en Física",
+    codigo: "15302",
+    campus: "San Joaquín",
+    valor: "4.740.000"
+  },
+  { 
+    carrera: "Químico",
+    codigo: "–",
+    campus: "Casa Central Valparaíso",
+    valor: "5.660.000"
+  },
+  { 
+    carrera: "Técnico Universitario Dibujante Proyectista",
+    codigo: "15545",
+    campus: "Concepción",
+    valor: "3.070.000"
+  },
+  { 
+    carrera: "Técnico Universitario en Administración de Empresas",
+    codigo: "15482",
+    campus: "Viña del Mar",
+    valor: "3.070.000"
+  },
+  { 
+    carrera: "Técnico Universitario en Administración de Empresas",
+    codigo: "15282",
+    campus: "Vitacura",
+    valor: "3.070.000"
+  },
+  { 
+    carrera: "Técnico Universitario en Administración de Empresas",
+    codigo: "–",
+    campus: "Concepción",
+    valor: "3.070.000"
+  },
+  { 
+    carrera: "Técnico Universitario en Automatización y Control",
+    codigo: "15537",
+    campus: "Concepción",
+    valor: "3.070.000"
+  },
+  { 
+    carrera: "Técnico Universitario en Biotecnología",
+    codigo: "–",
+    campus: "Viña del Mar",
+    valor: "3.070.000"
+  },
+  { 
+    carrera: "Técnico Universitario en Biotecnología",
+    codigo: "–",
+    campus: "Concepción",
+    valor: "3.070.000"
+  },
+  { 
+    carrera: "Técnico Universitario en Construcción",
+    codigo: "15412",
+    campus: "Viña del Mar",
+    valor: "3.070.000"
+  },
+  { 
+    carrera: "Técnico Universitario en Construcción",
+    codigo: "15512",
+    campus: "Concepción",
+    valor: "3.070.000"
+  },
+  { 
+    carrera: "Técnico Universitario en Control del Medio Ambiente",
+    codigo: "15452",
+    campus: "Viña del Mar",
+    valor: "3.070.000"
+  },
+  { 
+    carrera: "Técnico Universitario en Control del Medio Ambiente",
+    codigo: "15552",
+    campus: "Concepción",
+    valor: "3.070.000"
+  },
+  { 
+    carrera: "Técnico Universitario en Electricidad",
+    codigo: "15433",
+    campus: "Viña del Mar",
+    valor: "3.070.000"
+  },
+  { 
+    carrera: "Técnico Universitario en Electricidad",
+    codigo: "15533",
+    campus: "Concepción",
+    valor: "3.070.000"
+  },
+  { 
+    carrera: "Técnico Universitario en Electrónica",
+    codigo: "15435",
+    campus: "Viña del Mar",
+    valor: "3.070.000"
+  },
+  { 
+    carrera: "Técnico Universitario en Electrónica",
+    codigo: "15535",
+    campus: "Concepción",
+    valor: "3.070.000"
+  },
+  { 
+    carrera: "Técnico Universitario en Energías Renovables",
+    codigo: "15449",
+    campus: "Viña del Mar",
+    valor: "3.070.000"
+  },
+  { 
+    carrera: "Técnico Universitario en Alimentos",
+    codigo: "15453",
+    campus: "Viña del Mar",
+    valor: "3.070.000"
+  },
+  { 
+    carrera: "Técnico Universitario en Informática",
+    codigo: "15463",
+    campus: "Viña del Mar",
+    valor: "3.070.000"
+  },
+  { 
+    carrera: "Técnico Universitario en Informática",
+    codigo: "15563",
+    campus: "Concepción",
+    valor: "3.070.000"
+  },
+  { 
+    carrera: "Técnico Universitario en Mantenimiento Aeronáutico",
+    codigo: "15222",
+    campus: "San Joaquín",
+    valor: "3.990.000"
+  },
+  { 
+    carrera: "Técnico Universitario en Mantenimiento Industrial",
+    codigo: "15448",
+    campus: "Viña del Mar",
+    valor: "3.070.000"
+  },
+  { 
+    carrera: "Técnico Universitario en Mantenimiento Industrial",
+    codigo: "–",
+    campus: "Concepción",
+    valor: "3.070.000"
+  },
+  { 
+    carrera: "Técnico Universitario en Mecánica Automotriz",
+    codigo: "15443",
+    campus: "Viña del Mar",
+    valor: "3.070.000"
+  },
+  { 
+    carrera: "Técnico Universitario en Mecánica Automotriz",
+    codigo: "15543",
+    campus: "Concepción",
+    valor: "3.070.000"
+  },
+  { 
+    carrera: "Técnico Universitario en Mecánica Industrial",
+    codigo: "15444",
+    campus: "Viña del Mar",
+    valor: "3.070.000"
+  },
+  { 
+    carrera: "Técnico Universitario en Mecánica Industrial",
+    codigo: "15544",
+    campus: "Concepción",
+    valor: "3.070.000"
+  },
+  { 
+    carrera: "Técnico Universitario en Minería y Metalurgia",
+    codigo: "15413",
+    campus: "Viña del Mar",
+    valor: "3.070.000"
+  },
+  { 
+    carrera: "Técnico Universitario en Proyectos de Ingeniería",
+    codigo: "15446",
+    campus: "Viña del Mar",
+    valor: "3.070.000"
+  },
+  { 
+    carrera: "Técnico Universitario en Química, mención Química Analítica",
+    codigo: "15405",
+    campus: "Viña del Mar",
+    valor: "3.070.000"
+  },
+  { 
+    carrera: "Técnico Universitario en Química, mención Química Industrial",
+    codigo: "15505",
+    campus: "Concepción",
+    valor: "3.070.000"
+  },
+  { 
+    carrera: "Técnico Universitario en Robótica y Mecatrónica",
+    codigo: "15538",
+    campus: "Concepción",
+    valor: "3.070.000"
+  },
+  { 
+    carrera: "Técnico Universitario en Telecomunicaciones y Redes",
+    codigo: "15436",
+    campus: "Viña del Mar",
+    valor: "3.070.000"
+  },
+  { 
+    carrera: "Técnico Universitario en Telecomunicaciones y Redes",
+    codigo: "15536",
+    campus: "Concepción",
+    valor: "3.070.000"
+  },
+  { 
+    carrera: "Técnico Universitario en Ciencia de Datos",
+    codigo: "15464",
+    campus: "Viña del Mar",
+    valor: "3.070.000"
+  },
+  { 
+    carrera: "Técnico Universitario en Ciencia de Datos",
+    codigo: "15564",
+    campus: "Concepción",
+    valor: "3.070.000"
   }
 ];
 
