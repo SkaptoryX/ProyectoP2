@@ -1,5 +1,9 @@
 import { Grid, Card, CardContent, Typography, CardMedia, Box, Button } from '@mui/material';
 import diurnoImg from '../assets/images/diurno.jpg';
+import vespertinoImg from '../assets/images/vespertino.jpg';
+import magisterImg from '../assets/images/magister.jpg';
+import doctoradoImg from '../assets/images/doctorado.jpg';
+import formacionImg from '../assets/images/formacion.jpg';
 import { useNavigate } from 'react-router-dom';
 
 //Página 1
@@ -9,7 +13,54 @@ function Home() {
     {
       title: 'Pregrado Diurno',
       image: diurnoImg,
-      items: ['Carreras']
+      items: [
+        { label: 'Carreras', path: '/carreras' }, // This one goes to Carreras.js
+        { label: 'Aranceles', path: '/aranceles' }, // Updated path
+        { label: 'Admisión Centralizada - PAES', path: '/admision-paes' },
+        { label: 'Admisión Ingreso Directo a Carreras Técnicas Universitarias', path: '/desarrollo' },
+        { label: 'Admisión Especial', path: '/desarrollo' },
+        { label: 'Programas de Apoyo USM', path: '/desarrollo' },
+        { label: 'Becas de Admisión', path: '/desarrollo' },
+        { label: 'Beneficios Ministeriales', path: '/desarrollo' },
+        { label: 'Calendario Oficial Proceso Admisión', path: '/desarrollo' }
+      ]
+    },
+    {
+      title: 'Pregrado Vespertino',
+      image: vespertinoImg,
+      items: [
+        { label: 'Carreras', path: '/desarrollo' },
+        { label: 'Aranceles', path: '/desarrollo' },
+        { label: 'Beneficios Ministeriales', path: '/desarrollo' }
+      ]
+    },
+    {
+      title: 'Magíster',
+      image: magisterImg,
+      items: [
+        { label: 'Dirección de Postgrado y Programas', path: '/desarrollo' },
+        { label: 'Magíster Científico - Tecnológicos', path: '/desarrollo' },
+        { label: 'Magíster Profesionales', path: '/desarrollo' },
+        { label: 'Becas y Beneficios', path: '/desarrollo' }
+      ]
+    },
+    {
+      title: 'Doctorado',
+      image: doctoradoImg,
+      items: [
+        { label: 'Dirección de Postgrado y Programas', path: '/desarrollo' },
+        { label: 'Programas de Doctorados', path: '/desarrollo' },
+        { label: 'Becas y Beneficios', path: '/desarrollo' }
+      ]
+    },
+    {
+      title: 'Formación Continua',
+      image: formacionImg,
+      items: [
+        { label: 'Dirección General de Asistencia Técnica', path: '/desarrollo' },
+        { label: 'Diplomas y Cursos', path: '/desarrollo' },
+        { label: 'Evaluación y Certificación', path: '/desarrollo' }
+      ]
     }
   ];
 
@@ -50,14 +101,23 @@ function Home() {
                   }}>
                     {card.title}
                   </Typography>
-                  <Button
-                    variant="outlined"
-                    fullWidth
-                    sx={{ mb: 1, textTransform: 'none' }}
-                    onClick={() => navigate('/carreras')}
-                  >
-                    • Carreras
-                  </Button>
+                  {card.items.map((item, idx) => (
+                    <Button
+                      key={idx}
+                      variant="outlined"
+                      fullWidth
+                      sx={{ 
+                        mb: 1, 
+                        textTransform: 'none',
+                        justifyContent: 'flex-start',
+                        pl: 2
+                      }}
+                      onClick={() => item.external ? window.open(item.path) : navigate(item.path)}
+                      endIcon={item.external ? '↗' : null}
+                    >
+                      • {item.label}
+                    </Button>
+                  ))}
                 </CardContent>
               </Card>
             </Grid>
