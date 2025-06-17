@@ -521,18 +521,72 @@ function Aranceles() {
   const navigate = useNavigate();
   const [selectedCampus, setSelectedCampus] = useState('todos');
 
-  const campuses = ['Casa Central Valparaíso', 'San Joaquín', 'Vitacura'];
+  const campuses = [
+    'Casa Central Valparaíso',
+    'San Joaquín',
+    'Vitacura',
+    'Viña del Mar',
+    'Concepción'
+  ];
   
   const filteredData = selectedCampus === 'todos'
     ? arancelesData
     : arancelesData.filter(item => item.campus === selectedCampus);
 
-  // Add a helper function to check if a career has details
+  // Update the helper function with all available careers
   const hasCarreraDetails = (carreraNombre) => {
     const carreraMap = {
       'Arquitectura': 'arquitectura',
-      'Ingeniería Civil Informática': 'informatica',
-      'Ingeniería Civil Química': 'quimica'
+      'Construcción Civil': 'construccion-civil',
+      'Ingeniería Civil': 'ingenieria-civil',
+      'Ingeniería Civil Ambiental': 'ingenieria-civil-ambiental',
+      'Ingeniería Civil de Minas': 'ingenieria-civil-de-minas',
+      'Ingeniería Civil Eléctrica': 'ingenieria-civil-electrica',
+      'Ingeniería Civil Electrónica': 'ingenieria-civil-electronica',
+      'Ingeniería Civil en Biotecnología': 'ingenieria-civil-en-biotecnologia',
+      'Ingeniería Civil Física': 'ingenieria-civil-fisica',
+      'Ingeniería Civil Industrial': 'ingenieria-civil-industrial',
+      'Ingeniería Civil Informática': 'ingenieria-civil-informatica',
+      'Ingeniería Civil Matemática': 'ingenieria-civil-matematica',
+      'Ingeniería Civil Mecánica': 'ingenieria-civil-mecanica',
+      'Ingeniería Civil Metalúrgica': 'ingenieria-civil-metalurgica',
+      'Ingeniería Civil Plan Común': 'ingenieria-civil-plan-comun',
+      'Ingeniería Civil Química': 'ingenieria-civil-quimica',
+      'Ingeniería Civil Telemática': 'ingenieria-civil-telematica',
+      'Ingeniería Comercial': 'ingenieria-comercial',
+      'Ingeniería en Aviación Comercial': 'ingenieria-en-aviacion-comercial',
+      'Ingeniería en Biotecnología': 'ingenieria-en-biotecnologia',
+      'Ingeniería en Diseño de Productos': 'ingenieria-en-diseno-de-productos',
+      'Ingeniería en Fabricación y Diseño Industrial': 'ingenieria-en-fabricacion-y-diseno-industrial',
+      'Ingeniería en Informática': 'ingenieria-en-informatica',
+      'Ingeniería en Mantenimiento Industrial': 'ingenieria-en-mantenimiento-industrial',
+      'Ingeniería en Prevención de Riesgos Laborales y Ambientales': 'ingenieria-en-prevencion-de-riesgos-laborales-y-ambientales',
+      'Licenciatura en Astrofísica': 'licenciatura-en-astrofisica',
+      'Licenciatura en Ciencias, mención Química': 'licenciatura-en-ciencias-mencion-quimica',
+      'Licenciatura en Física': 'licenciatura-en-fisica',
+      'Químico': 'quimico',
+      'Técnico Universitario Dibujante Proyectista': 'tecnico-universitario-dibujante-proyectista',
+      'Técnico Universitario en Administración de Empresas': 'tecnico-universitario-en-administracion-de-empresas',
+      'Técnico Universitario en Alimentos': 'tecnico-universitario-en-alimentos',
+      'Técnico Universitario en Automatización y Control': 'tecnico-universitario-en-automatizacion-y-control',
+      'Técnico Universitario en Biotecnología': 'tecnico-universitario-en-biotecnologia',
+      'Técnico Universitario en Ciencia de Datos': 'tecnico-universitario-en-ciencia-de-datos',
+      'Técnico Universitario en Construcción': 'tecnico-universitario-en-construccion',
+      'Técnico Universitario en Control del Medio Ambiente': 'tecnico-universitario-en-control-del-medio-ambiente',
+      'Técnico Universitario en Electricidad': 'tecnico-universitario-en-electricidad',
+      'Técnico Universitario en Electrónica': 'tecnico-universitario-en-electronica',
+      'Técnico Universitario en Energías Renovables': 'tecnico-universitario-en-energias-renovables',
+      'Técnico Universitario en Informática': 'tecnico-universitario-en-informatica',
+      'Técnico Universitario en Mantenimiento Aeronáutico': 'tecnico-universitario-en-mantenimiento-aeronautico',
+      'Técnico Universitario en Mantenimiento Industrial': 'tecnico-universitario-en-mantenimiento-industrial',
+      'Técnico Universitario en Mecánica Automotriz': 'tecnico-universitario-en-mecanica-automotriz',
+      'Técnico Universitario en Mecánica Industrial': 'tecnico-universitario-en-mecanica-industrial',
+      'Técnico Universitario en Minería y Metalurgia': 'tecnico-universitario-en-mineria-y-metalurgia',
+      'Técnico Universitario en Proyectos de Ingeniería': 'tecnico-universitario-en-proyectos-de-ingenieria',
+      'Técnico Universitario en Química, mención Química Analítica': 'tecnico-universitario-en-quimica-mencion-quimica-analitica',
+      'Técnico Universitario en Química, mención Química Industrial': 'tecnico-universitario-en-quimica-mencion-quimica-industrial',
+      'Técnico Universitario en Robótica y Mecatrónica': 'tecnico-universitario-en-robotica-y-mecatronica',
+      'Técnico Universitario en Telecomunicaciones y Redes': 'tecnico-universitario-en-telecomunicaciones-y-redes'
     };
     return carreraMap[carreraNombre];
   };
