@@ -1,4 +1,4 @@
-import { Box, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, FormControl, Select, MenuItem, InputLabel, TextField } from '@mui/material';
+import { Box, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, FormControl, Select, MenuItem, InputLabel, TextField, Checkbox, ListItemText } from '@mui/material';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import arancelesBanner from '../assets/images/arancelesBanner.jpg';
@@ -519,7 +519,8 @@ const arancelesData = [
 
 function Aranceles() {
   const navigate = useNavigate();
-  const [selectedCampus, setSelectedCampus] = useState('todos');
+  // Cambiar el estado para manejar múltiples selecciones
+  const [selectedCampuses, setSelectedCampuses] = useState(['todos']);
   const [searchTerm, setSearchTerm] = useState('');  // Add search state
 
   const campuses = [
@@ -537,14 +538,18 @@ function Aranceles() {
       .replace(/[\u0300-\u036f]/g, "");
   };
 
-  // Update filtered data to include search
-  const filteredData = arancelesData
-    .filter(item => {
-      const matchesCampus = selectedCampus === 'todos' || item.campus === selectedCampus;
-      const matchesSearch = searchTerm === '' || 
-        normalizeText(item.carrera).includes(normalizeText(searchTerm));
-      return matchesCampus && matchesSearch;
-    });
+  // Modificar el manejador del cambio de selección
+  const handleCampusChange = (event) => {
+    const value = event.target.value;
+    if (value.includes('todos')) {
+      setSelectedCampuses(['todos']);
+    } else {
+      setSelectedCampuses(
+        // Eliminar 'todos' si está presente y el usuario selecciona una sede específica
+        typeof value === 'string' ? value.split(',') : value.filter(item => item !== 'todos')
+      );
+    }
+  };
 
   // Update the helper function with all available careers
   const hasCarreraDetails = (carreraNombre) => {
@@ -610,7 +615,6 @@ function Aranceles() {
           gap: 2, 
           justifyContent: 'flex-end',
           mb: 3,
-          bgcolor: '#f5f5f5', // Cambiado a gris claro para que coincida con el fondo
         }}>
           <TextField
             placeholder="Buscar por nombre de carrera..."
@@ -627,14 +631,23 @@ function Aranceles() {
             <InputLabel id="campus-select-label">Filtrar por Sede</InputLabel>
             <Select
               labelId="campus-select-label"
-              value={selectedCampus}
+              multiple
+              value={selectedCampuses}
               label="Filtrar por Sede"
-              onChange={(e) => setSelectedCampus(e.target.value)}
+              onChange={handleCampusChange}
+              renderValue={(selected) => {
+                if (selected.includes('todos')) return 'Todas las sedes';
+                return selected.join(', ');
+              }}
             >
-              <MenuItem value="todos">Todas las sedes</MenuItem>
+              <MenuItem value="todos">
+                <Checkbox checked={selectedCampuses.includes('todos')} />
+                <ListItemText primary="Todas las sedes" />
+              </MenuItem>
               {campuses.map((campus) => (
                 <MenuItem key={campus} value={campus}>
-                  {campus}
+                  <Checkbox checked={selectedCampuses.includes(campus)} />
+                  <ListItemText primary={campus} />
                 </MenuItem>
               ))}
             </Select>
@@ -705,7 +718,14 @@ function Aranceles() {
               </TableRow>
             </TableHead>
             <TableBody>
-              {filteredData.map((row, index) => (
+              {arancelesData
+                .filter(item => {
+                  const matchesCampus = selectedCampuses.includes('todos') || selectedCampuses.includes(item.campus);
+                  const matchesSearch = searchTerm === '' || 
+                    normalizeText(item.carrera).includes(normalizeText(searchTerm));
+                  return matchesCampus && matchesSearch;
+                })
+                .map((row, index) => (
                 <TableRow key={index} sx={{ '&:nth-of-type(odd)': { backgroundColor: '#fafafa' } }}>
                   <TableCell component="th" scope="row">
                     {hasCarreraDetails(row.carrera) ? (
