@@ -1,4 +1,4 @@
-import { Box, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, FormControl, Select, MenuItem, InputLabel } from '@mui/material';
+import { Box, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, FormControl, Select, MenuItem, InputLabel, TextField } from '@mui/material';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import arancelesBanner from '../assets/images/arancelesBanner.jpg';
@@ -520,6 +520,7 @@ const arancelesData = [
 function Aranceles() {
   const navigate = useNavigate();
   const [selectedCampus, setSelectedCampus] = useState('todos');
+  const [searchTerm, setSearchTerm] = useState('');  // Add search state
 
   const campuses = [
     'Casa Central Valparaíso',
@@ -528,17 +529,29 @@ function Aranceles() {
     'Viña del Mar',
     'Concepción'
   ];
-  
-  const filteredData = selectedCampus === 'todos'
-    ? arancelesData
-    : arancelesData.filter(item => item.campus === selectedCampus);
+
+  // Helper function to remove accents and normalize text for search
+  const normalizeText = (text) => {
+    return text.toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
+  };
+
+  // Update filtered data to include search
+  const filteredData = arancelesData
+    .filter(item => {
+      const matchesCampus = selectedCampus === 'todos' || item.campus === selectedCampus;
+      const matchesSearch = searchTerm === '' || 
+        normalizeText(item.carrera).includes(normalizeText(searchTerm));
+      return matchesCampus && matchesSearch;
+    });
 
   // Update the helper function with all available careers
   const hasCarreraDetails = (carreraNombre) => {
     const carreraMap = {
       'Arquitectura': 'arquitectura',
-      'Construcción Civil': 'construccion-civil',
-      'Ingeniería Civil': 'ingenieria-civil',
+      'Ingeniería Civil Informática': 'ingenieria-civil-informatica',
+      'Ingeniería Civil Química': 'ingenieria-civil-quimica',
       'Ingeniería Civil Ambiental': 'ingenieria-civil-ambiental',
       'Ingeniería Civil de Minas': 'ingenieria-civil-de-minas',
       'Ingeniería Civil Eléctrica': 'ingenieria-civil-electrica',
@@ -546,47 +559,16 @@ function Aranceles() {
       'Ingeniería Civil en Biotecnología': 'ingenieria-civil-en-biotecnologia',
       'Ingeniería Civil Física': 'ingenieria-civil-fisica',
       'Ingeniería Civil Industrial': 'ingenieria-civil-industrial',
-      'Ingeniería Civil Informática': 'ingenieria-civil-informatica',
       'Ingeniería Civil Matemática': 'ingenieria-civil-matematica',
       'Ingeniería Civil Mecánica': 'ingenieria-civil-mecanica',
       'Ingeniería Civil Metalúrgica': 'ingenieria-civil-metalurgica',
-      'Ingeniería Civil Plan Común': 'ingenieria-civil-plan-comun',
-      'Ingeniería Civil Química': 'ingenieria-civil-quimica',
+      'Ingeniería Civil Plan Común': 'ingenieria-civil-plan-comun', 
       'Ingeniería Civil Telemática': 'ingenieria-civil-telematica',
       'Ingeniería Comercial': 'ingenieria-comercial',
       'Ingeniería en Aviación Comercial': 'ingenieria-en-aviacion-comercial',
-      'Ingeniería en Biotecnología': 'ingenieria-en-biotecnologia',
       'Ingeniería en Diseño de Productos': 'ingenieria-en-diseno-de-productos',
-      'Ingeniería en Fabricación y Diseño Industrial': 'ingenieria-en-fabricacion-y-diseno-industrial',
-      'Ingeniería en Informática': 'ingenieria-en-informatica',
-      'Ingeniería en Mantenimiento Industrial': 'ingenieria-en-mantenimiento-industrial',
-      'Ingeniería en Prevención de Riesgos Laborales y Ambientales': 'ingenieria-en-prevencion-de-riesgos-laborales-y-ambientales',
       'Licenciatura en Astrofísica': 'licenciatura-en-astrofisica',
-      'Licenciatura en Ciencias, mención Química': 'licenciatura-en-ciencias-mencion-quimica',
-      'Licenciatura en Física': 'licenciatura-en-fisica',
-      'Químico': 'quimico',
-      'Técnico Universitario Dibujante Proyectista': 'tecnico-universitario-dibujante-proyectista',
-      'Técnico Universitario en Administración de Empresas': 'tecnico-universitario-en-administracion-de-empresas',
-      'Técnico Universitario en Alimentos': 'tecnico-universitario-en-alimentos',
-      'Técnico Universitario en Automatización y Control': 'tecnico-universitario-en-automatizacion-y-control',
-      'Técnico Universitario en Biotecnología': 'tecnico-universitario-en-biotecnologia',
-      'Técnico Universitario en Ciencia de Datos': 'tecnico-universitario-en-ciencia-de-datos',
-      'Técnico Universitario en Construcción': 'tecnico-universitario-en-construccion',
-      'Técnico Universitario en Control del Medio Ambiente': 'tecnico-universitario-en-control-del-medio-ambiente',
-      'Técnico Universitario en Electricidad': 'tecnico-universitario-en-electricidad',
-      'Técnico Universitario en Electrónica': 'tecnico-universitario-en-electronica',
-      'Técnico Universitario en Energías Renovables': 'tecnico-universitario-en-energias-renovables',
-      'Técnico Universitario en Informática': 'tecnico-universitario-en-informatica',
-      'Técnico Universitario en Mantenimiento Aeronáutico': 'tecnico-universitario-en-mantenimiento-aeronautico',
-      'Técnico Universitario en Mantenimiento Industrial': 'tecnico-universitario-en-mantenimiento-industrial',
-      'Técnico Universitario en Mecánica Automotriz': 'tecnico-universitario-en-mecanica-automotriz',
-      'Técnico Universitario en Mecánica Industrial': 'tecnico-universitario-en-mecanica-industrial',
-      'Técnico Universitario en Minería y Metalurgia': 'tecnico-universitario-en-mineria-y-metalurgia',
-      'Técnico Universitario en Proyectos de Ingeniería': 'tecnico-universitario-en-proyectos-de-ingenieria',
-      'Técnico Universitario en Química, mención Química Analítica': 'tecnico-universitario-en-quimica-mencion-quimica-analitica',
-      'Técnico Universitario en Química, mención Química Industrial': 'tecnico-universitario-en-quimica-mencion-quimica-industrial',
-      'Técnico Universitario en Robótica y Mecatrónica': 'tecnico-universitario-en-robotica-y-mecatronica',
-      'Técnico Universitario en Telecomunicaciones y Redes': 'tecnico-universitario-en-telecomunicaciones-y-redes'
+      'Licenciatura en Física': 'licenciatura-en-fisica'
     };
     return carreraMap[carreraNombre];
   };
@@ -621,8 +603,27 @@ function Aranceles() {
             { label: 'Aranceles' }
           ]}
         />
-        <Box sx={{ display: 'flex', justifyContent: 'flex-end', mb: 3 }}>
-          <FormControl sx={{ minWidth: 200 }}>
+
+        <Box sx={{ 
+          display: 'flex', 
+          flexDirection: { xs: 'column', md: 'row' }, 
+          gap: 2, 
+          justifyContent: 'flex-end',
+          mb: 3,
+          bgcolor: '#f5f5f5', // Cambiado a gris claro para que coincida con el fondo
+        }}>
+          <TextField
+            placeholder="Buscar por nombre de carrera..."
+            variant="outlined"
+            size="small"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            sx={{ 
+              flexGrow: 1,
+              minWidth: { xs: '100%', md: '300px' },
+            }}
+          />
+          <FormControl size="small" sx={{ minWidth: 200 }}>
             <InputLabel id="campus-select-label">Filtrar por Sede</InputLabel>
             <Select
               labelId="campus-select-label"
